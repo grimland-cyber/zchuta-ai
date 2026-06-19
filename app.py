@@ -1,11 +1,3 @@
-
-Zchuta_AI_Clean_App.py
-
-Page
-1
-/
-1
-100%
 import streamlit as st
 import time
 
