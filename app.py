@@ -365,6 +365,3 @@ st.sidebar.markdown("""
 4. לחץ **New App**, בחר את התיקייה ואת הקובץ `app.py` ולחץ **Deploy**.
 5. **זהו!** תקבל לינק ישיר (למשל `zchuta-ai.streamlit.app`) שפועל מכל טלפון או מחשב.
 """)
-EOF
-python3 -m py_compile /working_dir/c_cb0767162a7c0dbc/app.py
-}
