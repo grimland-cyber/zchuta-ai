@@ -109,15 +109,10 @@ st.markdown("""
 st.markdown("<h1 class='app-title'>זכותא-AI 🤖</h1>", unsafe_allow_html=True)
 st.markdown("<p class='app-subtitle'>מיצוי זכויות פרואקטיבי בעידן סוכני ה-AI האוטונומיים</p>", unsafe_allow_html=True)
 
-# Intro Card for Social Workers and Welfare Professionals
+# Simple Intro Card
 st.markdown("""
-<div class='feature-box' style='background: linear-gradient(135deg, #0f172a, #1e293b); color: white;'>
-    <h3 style='margin-top: 0; color: #38bdf8; font-weight: 700; font-size: 16px;'>מיצוי זכויות אקטיבי בעידן ה-AI: חזון חדש לעבודה סוציאלית דיגיטלית</h3>
-    <p style='font-size: 12.5px; color: #cbd5e1; line-height: 1.6; text-align: justify;'>
-        פרויקט זה מציג חזון טכנולוגי-חברתי שבו סוכני בינה מלאכותית אוטונומיים משנים את פני השירות הסוציאלי ומקלים על הנטל הבירוקרטי של הפונים. <br>
-        במקום התמודדות מפרכת של האזרח (או העובד הסוציאלי המלווה אותו) עם מערכות טפסים מסורבלות, חוקים דינמיים ותקופות שלילה, סוכן ה-AI סורק באופן פרואקטיבי (תחת הרשאה) את מרחב הנתונים, מצליב אותם מול מאגר חוקים מעוגן דטרמיניסטית (ללא הזיות, מעודכן לתעריפי 2026), ומאכלס את התביעות במלואן.<br>
-        הסימולטור שלפניכם ממחיש כיצד טכנולוגיה ממוקדת-אדם יכולה לצמצם פערים דיגיטליים, להגדיל את שיעורי מיצוי הזכויות בפועל, ולפנות לעובדים הסוציאליים זמן יקר המוקדש כיום לבירוקרטיה - לטובת התערבות טיפולית ותמיכה רגשית מעמיקה.
-    </p>
+<div class='feature-box' style='background: linear-gradient(135deg, #0f172a, #1e293b); color: white; text-align: center; padding: 20px;'>
+    <h3 style='margin: 0; color: #38bdf8; font-weight: 700; font-size: 16px; text-align: center; direction: rtl;'>הנה הדגמה קצרה של איך יכול להיראות מיצוי זכויות בעידן של סוכני AI</h3>
 </div>
 """, unsafe_allow_html=True)
 
@@ -208,6 +203,33 @@ scenarios = {
             "[SUCCESS] טופס התביעה מוכן ומאושר דיגיטלית להגשה!"
         ]
     },
+    "🧒 גמלת ילד נכה (שלושה ילדים אוטיסטים)": {
+        "text": "יש לי שלושה ילדים קטנים אוטיסטים. אילו זכויות מגיעות לנו מביטוח לאומי?",
+        "type": "disabled_child",
+        "salary": 17190,
+        "payout": "17,190 ש\"ח לחודש (3,820 ש\"ח בסיס לכל ילד + 50% תוספת למשפחה עם מספר ילדים נכים)",
+        "form": "טופס 7821 (תביעה לגמלת ילד נכה)",
+        "fields": {
+            "שם המבוטח (הורה)": "גיא גרימלנד",
+            "סוג התביעה": "ילד נכה (טופס 7821) x 3 ילדים",
+            "מספר ילדים זכאים": "3 ילדים",
+            "שיעור זכאות": "100% גמלת ילד נכה לכל ילד (על הרצף האוטיסטי ASD)",
+            "תוספת משפחתית": "תוספת של 50% לקצבה של כל אחד מהילדים בגין ריבוי ילדים נכים במשפחה",
+            "סך קצבה חודשית משולבת": "17,190 ש\"ח לחודש קבוע"
+        },
+        "logs": [
+            "[SYSTEM] מאתחל סוכן זכויות... זיהוי כוונה מתוך שפה חופשית.",
+            "[EXTRACTOR] זיהוי ישויות: אבחון רפואי [אוטיזם ASD], מספר ילדים [3], גילאים [קטנים - מתחת ל-18].",
+            "[RULES_DB] מצליב נתונים מול תקנות ילד נכה לשנת 2026: אבחון על הרצף האוטיסטי (ASD) מזכה אוטומטית ב-100% קצבה בגובה 3,820 ש\"ח לחודש לילד.",
+            "[RULES_DB] חוק ריבוי ילדים נכים זוהה! משפחה שבה יותר מילד אחד נכה זכאית לתוספת של 50% לקצבה של כל אחד מהילדים.",
+            "[CALCULATOR] חישוב קצבה מוגדלת לילד: 3,820 ש\"ח * 150% = 5,730 ש\"ח לכל אחד מ-3 הילדים.",
+            "[CALCULATOR] סך קצבה חודשית משולבת למשפחה: 5,730 ש\"ח * 3 = 17,190 ש\"ח לחודש.",
+            "[FORM_ENGINE] מאכלס 3 טפסי תביעה נפרדים (טופס 7821) עבור כל אחד מהילדים באופן אוטומטי.",
+            "[FORM_ENGINE] סורק ומצרף אוטומטית דוחות אבחון (אבחון פסיכולוגי ואבחון פסיכיאטרי/נוירולוגי) מתיקיית המסמכים הדיגיטלית.",
+            "[API_CLIENT] סנכרון תביעה ישיר לאזור האישי הממשלתי.",
+            "[SUCCESS] שלוש התביעות מולאו, צורפו האבחונים הנדרשים, והן מוכנות לשגר!"
+        ]
+    },
     "✍️ הקלד מקרה חדש בלשון חופשית": {
         "text": "",
         "type": "custom",
@@ -215,6 +237,10 @@ scenarios = {
         "payout": "",
         "form": "",
         "fields": {},
+        "json": {
+            "status": "raw_unstructured_text",
+            "requires_llm_classification": True
+        },
         "logs": []
     }
 }
@@ -225,7 +251,7 @@ selected_data = scenarios[choice]
 
 # Manual Input Box
 if choice == "✍️ הקלד מקרה חדש בלשון חופשית":
-    user_story = st.text_area("הקלד כאן את סיפור המקרה (בעברית חופשית):", "", height=100, placeholder="לדוגמה: עבדתי שנה וחצי, אשתי קיבלה עבודה בחיפה ונאלצנו לעבור...")
+    user_story = st.text_area("הקלד כאן את סיפור המקרה (בעברית חופשית):", "", height=100, placeholder="לדוגמה: יש לי שלושה ילדים קטנים אוטיסטים, אילו זכויות מגיעות לי?")
 else:
     user_story = st.text_area("טקסט המקרה כפי שנקלט בסוכן (ניתן לעריכה):", selected_data["text"], height=100)
 
@@ -234,8 +260,6 @@ if st.button("🤖 הפעל את סוכן ה-AI האוטונומי"):
     if not user_story.strip():
         st.warning("אנא הזן או בחר מקרה לסימולציה לפני ההפעלה.")
     else:
-        st.write("### 🧠 שלב 2: סוכן ה-AI פועל ומקבל החלטות (בזמן אמת)")
-        
         # Determine which scenario logic to run based on free-text routing if "custom" is selected
         active_scen = selected_data
         scen_type = selected_data["type"]
@@ -246,6 +270,9 @@ if st.button("🤖 הפעל את סוכן ה-AI האוטונומי"):
             if "לידה" in text_lower or "תאומים" in text_lower or "ילדתי" in text_lower or "הריון" in text_lower:
                 active_scen = scenarios["🤰 דמי לידה ותאומים (אמא שכירה)"]
                 st.info("💡 סוכן ה-AI זיהה בהצלחה כוונת 'חופשת לידה והורות' מתוך הטקסט החופשי שהקלדת.")
+            elif "אוטיס" in text_lower or "אוטיז" in text_lower or "ילד נכה" in text_lower or "ילדים נכים" in text_lower or "ילדים אוטיסטים" in text_lower:
+                active_scen = scenarios["🧒 גמלת ילד נכה (שלושה ילדים אוטיסטים)"]
+                st.info("💡 סוכן ה-AI זיהה בהצלחה כוונת 'גמלת ילד נכה (על הרצף האוטיסטי)' מתוך הטקסט החופשי שהקלדת.")
             elif "התפטר" in text_lower or "אבטלה" in text_lower or "מעבר" in text_lower or "דירה" in text_lower:
                 active_scen = scenarios["🚗 מעבר דירה והתפטרות מוצדקת (שכיר)"]
                 st.info("💡 סוכן ה-AI זיהה בהצלחה כוונת 'סיום העסקה ואבטלה' מתוך הטקסט החופשי שהקלדת.")
@@ -257,6 +284,23 @@ if st.button("🤖 הפעל את סוכן ה-AI האוטונומי"):
                 active_scen = scenarios["🚗 מעבר דירה והתפטרות מוצדקת (שכיר)"]
                 st.info("💡 סוכן ה-AI סיווג את המקרה תחת תוכנית 'אבטלה וזכויות תעסוקה' על בסיס ניתוח הטקסט.")
 
+        st.write("### 🧠 שלב 2: תצוגת הארכיטקטורה הדיגיטלית בפעולה")
+        
+        # Displaying the raw JSON extraction layer
+        st.write("#### 🛡️ רובד א': חילוץ ישויות סמנטי לקובץ Fact Sheet (מנוע ה-LLM)")
+        st.write("הסוכן תרגם את סיפור החיים הלא-מובנה שלך למבנה נתונים מוגדר היטב (JSON Schema) ללא איבוד מידע:")
+        
+        # Mocking the dynamic JSON change
+        json_display = active_scen["json"]
+        if scen_type == "custom":
+            json_display["user_story_length_chars"] = len(user_story)
+            json_display["extracted_keywords"] = [word for word in ["לידה", "תאומים", "אוטיזם", "אבטלה", "התפטרתי", "פרישה"] if word in user_story]
+            
+        st.json(json_display)
+        
+        st.write("#### ⚙️ רובד ב': מנוע החוקים הדטרמיניסטי וזרם הלוגים של הסוכן")
+        st.write("המערכת הזינה את קובץ ה-JSON לעץ החלטות חוקי (Deterministic Engine) ללא חשש להזיות מילוליות:")
+        
         # Progress Bar and Live Animated Terminal Logs
         progress_bar = st.progress(0)
         status_text = st.empty()
@@ -284,7 +328,7 @@ if st.button("🤖 הפעל את סוכן ה-AI האוטונומי"):
         st.balloons()
         
         # Step 3: Result Dashboard for the Citizen
-        st.write("### 💰 שלב 3: התוצאה הסופית עבור המבוטח")
+        st.write("### 💰 שלב 3: התוצאה הסופית עבור המבוטח והעובד הסוציאלי")
         st.success(f"**נמצאו זכויות כספיות מותאמות אישית!**")
         
         col1, col2 = st.columns(2)
@@ -318,6 +362,9 @@ st.sidebar.markdown("""
 1. שמור את קוד ה-Python של קובץ זה (`app.py`).
 2. העלה אותו לתיקייה חדשה (Repository) בחינם ב-**GitHub**.
 3. כנס לאתר **[Streamlit Community Cloud](https://streamlit.io/cloud)**, התחבר עם GitHub.
-4. לחץ **New App**, בחר את התיקייה ואת הקובץ `app.py` ולעשות **Deploy**.
+4. לחץ **New App**, בחר את התיקייה ואת הקובץ `app.py` ולחץ **Deploy**.
 5. **זהו!** תקבל לינק ישיר (למשל `zchuta-ai.streamlit.app`) שפועל מכל טלפון או מחשב.
 """)
+EOF
+python3 -m py_compile /working_dir/c_cb0767162a7c0dbc/app.py
+}
