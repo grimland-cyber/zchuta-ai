@@ -1,5 +1,5 @@
 import streamlit as st
-import time
+importA time
 
 # Set page configuration
 st.set_page_config(
