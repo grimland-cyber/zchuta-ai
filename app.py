@@ -134,6 +134,18 @@ scenarios = {
             "שבועות זכאות": "18 שבועות (126 ימי תשלום מלאים)",
             "חשבון בנק לזיכוי": "בנק לאומי (10), סניף 800, ח\"פ 123456"
         },
+        "json": {
+            "age": 31,
+            "marital_status": "married",
+            "employment_status": "employee",
+            "continuous_months_worked": 24,
+            "monthly_gross_salary": 14000,
+            "life_event": {
+                "type": "childbirth",
+                "children_born": 2,
+                "twins": True
+            }
+        },
         "logs": [
             "[SYSTEM] מאתחל סוכן זכויות... זיהוי כוונה מתוך שפה חופשית.",
             "[EXTRACTOR] זיהוי ישויות: אירוע [לידה], מספר ילדים [2 - תאומים], שכר [14,000 ש\"ח], ותק [24 חודשים].",
@@ -160,6 +172,19 @@ scenarios = {
             "סיבת סיום עבודה": "התפטרות מוצדקת (מעבר דירה בעקבות תעסוקת בת זוג)",
             "מרחק המעבר": "84 ק\"מ (מעל הרף החוקי של 40 ק\"מ)",
             "נספחים שאומתו ע\"י הסוכן": "חוזה שכירות בחיפה, חוזה עבודה של בת הזוג באינטל חיפה"
+        },
+        "json": {
+            "age": 43,
+            "marital_status": "married",
+            "employment_status": "employee",
+            "continuous_months_worked": 18,
+            "monthly_gross_salary": 11000,
+            "life_event": {
+                "type": "termination",
+                "termination_type": "voluntary_resignation",
+                "reason": "relocation_spouse_employment",
+                "distance_km": 84
+            }
         },
         "logs": [
             "[SYSTEM] מאתחל סוכן זכויות... זיהוי כוונה מתוך שפה חופשית.",
@@ -189,6 +214,18 @@ scenarios = {
             "שכר חודשי קיים": "7,200 ש\"ח (עובר מבחן הכנסה לזוג - תקרת 2026 היא 10,436 ש\"ח)",
             "תוספת ותק מאושרת": "30% תוספת בגין 25 שנות ביטוח"
         },
+        "json": {
+            "age": 67,
+            "marital_status": "married",
+            "spouse_employed": False,
+            "employment_status": "employee",
+            "years_insured": 25,
+            "monthly_gross_salary": 7200,
+            "life_event": {
+                "type": "retirement",
+                "reached_retirement_age": True
+            }
+        },
         "logs": [
             "[SYSTEM] מאתחל סוכן זכויות... זיהוי כוונה מתוך שפה חופשית.",
             "[EXTRACTOR] זיהוי ישויות: אירוע [פרישה], גיל [67], שכר [7,200 ש\"ח], ותק ביטוחי [25 שנים], בת זוג [בת 64, לא עובדת].",
@@ -216,6 +253,16 @@ scenarios = {
             "שיעור זכאות": "100% גמלת ילד נכה לכל ילד (על הרצף האוטיסטי ASD)",
             "תוספת משפחתית": "תוספת של 50% לקצבה של כל אחד מהילדים בגין ריבוי ילדים נכים במשפחה",
             "סך קצבה חודשית משולבת": "17,190 ש\"ח לחודש קבוע"
+        },
+        "json": {
+            "marital_status": "married",
+            "number_of_children": 3,
+            "life_event": {
+                "type": "medical_diagnosis",
+                "diagnosis": "Autism ASD",
+                "number_of_disabled_children": 3,
+                "disability_percentage_per_child": 100
+            }
         },
         "logs": [
             "[SYSTEM] מאתחל סוכן זכויות... זיהוי כוונה מתוך שפה חופשית.",
